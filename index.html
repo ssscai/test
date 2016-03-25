@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+	<meta charset="UTF-8">
+	<title>angular 初体现</title>
+	<script type="text/javascript" src="node_modules/angular/angular.js"></script>
+</head>
+<body  ng-controller="democontrollar">
+	<input type="text" id="value" ng-module='value'>
+	<input type="button" value="*2" id="btn" ng-click="doCalc">
+	<script type="text/javascript">
+		(function(window){
+			// 自执行代码不会污染全局
+			// 第一步创建模块
+			var myapp=window.angular.module('myapp',[]);
+			myapp.controller("democontrollar",function($scope){
+				$scope.value=0;
+				$scope.doCalc=$scope.value*2;
+			})
+		})(window)
+	</script>
+</body>
+</html>
